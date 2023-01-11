@@ -1,0 +1,39 @@
+.container {
+	width: 80%;
+	background-color: #E6E6E6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image, .formLogin {
+	width: 49%;
+}
+
+.image img{
+	width: 100%;
+}
+
+.formLogin form header h1 {
+	font-size: 3.9rem;
+	font-weight: 700;
+}
+
+.btn {
+	text-align: center;
+}
+.btnSend {
+	padding: 10px;
+	border-radius: 30px;
+	font-size: 3.9rem;
+	border: none;
+	margin-top: 5px;
+	font-weight: 700;
+	background-color: #628890;
+	color: white;
+}
+.btnSend:hover {
+	background-color: #62889050;
+	transition: 0.4s;
+	cursor: pointer;
+}

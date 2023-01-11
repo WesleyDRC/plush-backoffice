@@ -8,4 +8,16 @@
 
 .container img {
 	width: 90%;
+	animation: toBottomLogo 0.3s 0.3s backwards;
+}
+
+@keyframes toBottomLogo {
+  from {
+    opacity: 0;
+    transform: translateY(-50vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
 }
