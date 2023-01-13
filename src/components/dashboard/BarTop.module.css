@@ -1,0 +1,33 @@
+.barTop {
+	background-color: #407BFF;
+	grid-column: 2/4;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: 20px;
+}
+.menu header {
+	font-size: 2rem;
+	font-weight: bold;
+	color: white;
+
+}
+
+.hamburguer {
+	width: 40px;
+	height: 30px;
+}
+.hamburguer > div {
+	background-color: white;
+	height: 5px;
+	width: 100%;
+	margin-bottom: 6px;
+	transition-duration: 0.3s;
+}

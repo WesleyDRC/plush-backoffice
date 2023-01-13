@@ -1,0 +1,44 @@
+.card {
+	background-color: #4F85FF;
+	border-radius: 15px;
+	width: 316px;
+	height: 130px;
+	overflow: hidden;
+}
+
+.card header {
+	display: flex;
+	justify-content: flex-end;
+	color: white;
+	font-size: 2rem;
+	padding-right: 10px;
+	height: 20%;
+}
+
+.card .information {
+	width: 100%;
+	height: 80%;
+	display: flex;
+
+}
+
+.icon {
+	width: 20%;
+	align-self: center;
+	padding: 10px;
+}
+.icon img {
+	width: 60px;
+	height: 48px;
+	background-color: #365499;
+	padding: 5px;
+}
+.value {
+	width: 80%;
+	font-size: 5rem;
+	color: white;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

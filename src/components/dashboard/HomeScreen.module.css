@@ -1,0 +1,39 @@
+.HomeScreen {
+	background-color: white;;
+	grid-column: 2/3;
+	padding: 10px;
+}
+
+.welcome {
+	background-image: linear-gradient(109.48deg, #4F85FF 43.45%, rgba(29, 55, 113, 0) 100%);
+	border-radius: 15px;
+	width: fit-content;
+	padding: 10px;
+	display: flex;
+}
+
+.phrase {
+	justify-self: flex-end
+}
+.phrase p:nth-child(1){
+	color: white;
+	font-weight: 700;
+	font-size: 4rem;
+}
+.phrase p:nth-child(2){
+	color: white;
+	font-weight: 500;
+	font-size: 2rem;
+}
+
+.phrase, .image {
+	width: 100%;
+}
+
+.cards {
+	margin-top: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}

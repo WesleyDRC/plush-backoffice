@@ -1,11 +1,16 @@
 .container {
-	width: 80%;
 	display: flex;
 	align-items: center;
+	width: 100%;
+}
+
+.enterDashboard {
+	width: 80%;
+	display: flex;
 	justify-content: center;
 }
 
-.image, .formLogin {
+.image, .enter {
 	width: 49%;
 }
 
@@ -13,16 +18,21 @@
 	width: 100%;
 }
 
-.formLogin form header h1 {
+.enter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+.enter h1 {
 	font-size: 3.9rem;
 	font-weight: 700;
 }
 
-.btn {
-	text-align: center;
-}
-.btnSend {
-	padding: 10px;
+.enter .btn {
+	padding: 30px;
 	border-radius: 30px;
 	font-size: 3.9rem;
 	border: none;
@@ -31,7 +41,8 @@
 	background-color: #407BFF;
 	color: white;
 }
-.btnSend:hover {
+
+.enter .btn:hover {
 	background-color: #407BFF50;
 	transition: 0.4s;
 	cursor: pointer;
