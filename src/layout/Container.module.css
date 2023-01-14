@@ -1,6 +1,6 @@
 .container {
-	width: 1280px;
+	max-width: 1280px;
 	margin: 0 auto;
 	background-color: #E6E6E6;
-
+	width: 100%;
 }
