@@ -26,13 +26,12 @@ export default function Dashboard() {
 		window.addEventListener('resize', handleResize)
 		if(dimensions.width > 760) {
 			setMenu(true)
+			document.body.style.overflow = "initial"
 		}
 		return _ => {
 			window.removeEventListener('resize', handleResize)
 		}
 	})
-
-
 
 	const handleMenuDesktop = () => {
 		console.log("Clicou no desktop")
