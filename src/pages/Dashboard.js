@@ -5,12 +5,49 @@ import Menu from '../components/dashboard/Menu'
 import HomeScreen from '../components/dashboard/HomeScreen';
 import BarTop from '../components/dashboard/BarTop';
 
+import { useState, useEffect } from 'react';
+
 export default function Dashboard() {
+
+	const [menu, setMenu] = useState(true)
+	const [dimensions, setDimensions] = useState({
+		height: window.innerHeight,
+		width: window.innerWidth
+	})
+
+	useEffect(() => {
+		function handleResize() {
+			setDimensions({
+				height: window.innerHeight,
+        width: window.innerWidth
+			})
+		}
+
+		window.addEventListener('resize', handleResize)
+		if(dimensions.width > 760) {
+			setMenu(true)
+		}
+		return _ => {
+			window.removeEventListener('resize', handleResize)
+		}
+	})
+
+
+
+	const handleMenuDesktop = () => {
+		console.log("Clicou no desktop")
+	}
+
+	const hamburguerMobile = () => {
+		document.body.style.overflow = menu ? "hidden" : "initial"
+		setMenu(!menu)
+	}
+
 	return (
 		<div className={styles.container}>
 			<LogoTop />
-			<BarTop />
-			<Menu />
+			<BarTop handleMenuDesktop={handleMenuDesktop} hamburguerMobile={hamburguerMobile} />
+			<Menu activedMenu={menu} />
 			<HomeScreen />
 		</div>
 	)

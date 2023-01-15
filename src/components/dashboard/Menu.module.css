@@ -1,9 +1,10 @@
-.menu {
+.menuInitial {
 	background-color: #407BFF;
 	grid-column: 1/2;
 }
 
-.menu > header {
+.menuInitial > header,
+.menuMobile > header {
 	background-color: #1D3771;
 	font-size: 2rem;
 	font-weight: bold;
@@ -15,4 +16,22 @@
 	margin-top: 5px;
 	display: flex;
 	flex-direction: column;
+}
+
+.menuMobile {
+	display: none;
+}
+
+@media (max-width: 760px) {
+	.menuInitial {
+		display: none;
+	}
+	.menuMobile {
+		display: block;
+		background-color: #407BFF;
+		grid-column: 1/4;
+	}
+	.menuMobile .list {
+		transition-duration: 0.5s;
+	}
 }

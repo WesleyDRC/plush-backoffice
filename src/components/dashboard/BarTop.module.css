@@ -20,14 +20,41 @@
 	color: white;
 }
 
-.hamburguer {
+.hamburguerDesktop {
 	width: 40px;
 	height: 30px;
 }
-.hamburguer > div {
+.hamburguerDesktop > div {
 	background-color: white;
 	height: 5px;
 	width: 100%;
 	margin-bottom: 6px;
 	transition-duration: 0.3s;
+}
+
+.hamburguerMobile {
+	display: none;
+	width: 40px;
+	height: 30px;
+}
+.hamburguerMobile > div {
+	background-color: white;
+	height: 5px;
+	width: 100%;
+	margin-bottom: 6px;
+	transition-duration: 0.3s;
+}
+
+@media (max-width: 760px) {
+	.barTop {
+		grid-column: 1/4;
+	}
+
+	.hamburguerDesktop {
+		display: none;
+	}
+
+	.hamburguerMobile {
+		display: block;
+	}
 }

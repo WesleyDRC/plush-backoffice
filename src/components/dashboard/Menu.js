@@ -2,9 +2,11 @@ import styles from './Menu.module.css'
 import User from './User'
 import ItemList from './ItemList'
 
-export default function Menu() {
+import './Menu.module.css'
+
+export default function Menu({activedMenu}) {
 	return (
-		<div className={styles.menu}>
+		<div className={ activedMenu ? styles.menuInitial : styles.menuMobile} id="asideMenu">
 			<User />
 			<header> MENU </header>
 			<ul className={styles.list}>

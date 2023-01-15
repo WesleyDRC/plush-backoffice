@@ -14,3 +14,15 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
 }
+
+@media (max-width: 782px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 40.5%;
+  }
+}
