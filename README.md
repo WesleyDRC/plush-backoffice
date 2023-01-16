@@ -1,6 +1,6 @@
-# Projeto desenvolvido para nosso TCC na ETEC no curso de Desenvolvimento de Sistemas.
+# Backoffice.
 
-Projeto construído durante o 2/3° módulo do curso de DS.
+Projeto desenvolvido para administrar o ecommerce **Louco por Pelucias**.
 
 > DESIGN
 
