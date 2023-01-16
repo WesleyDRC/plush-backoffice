@@ -28,7 +28,7 @@ export default function Dashboard() {
 			setMenu(true)
 			document.body.style.overflow = "initial"
 		}
-		return _ => {
+		return () => {
 			window.removeEventListener('resize', handleResize)
 		}
 	})
