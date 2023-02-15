@@ -6,13 +6,14 @@ import HomeScreen from '../components/dashboard/HomeScreen';
 import BarTop from '../components/dashboard/BarTop';
 
 import useUser from '../hooks/useUse';
+import useAuth from '../hooks/useAuth';
 
 import { useState, useEffect } from 'react';
 
 export default function Dashboard() {
 
 	const {getInfoUser, user} = useUser()
-
+	const {authenticated} = useAuth()
 	const [menu, setMenu] = useState(true)
 	const [dimensions, setDimensions] = useState({
 		height: window.innerHeight,
@@ -39,7 +40,7 @@ export default function Dashboard() {
 
 	useEffect(() => {
 		getInfoUser()
-	}, [])
+	}, [authenticated])
 
 	const handleMenuDesktop = () => {
 		console.log("Clicou no desktop")

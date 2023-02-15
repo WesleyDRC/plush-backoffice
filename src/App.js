@@ -1,17 +1,13 @@
 import Container from "./layout/Container";
-import Routes from "./routes";
-import { AuthProvider } from "./contexts/auth";
-import { UserProvider } from "./contexts/user";
+import AppRoutes from "./routes/AppRoutes";
+
 
 function App() {
   return (
-    <AuthProvider>
-      <UserProvider>
-        <Container>
-          <Routes />
-        </Container>
-      </UserProvider>
-    </AuthProvider>
+    <Container>
+      <AppRoutes />
+    </Container>
+
   );
 }
 

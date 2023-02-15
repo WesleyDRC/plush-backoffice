@@ -10,7 +10,7 @@ export const UserProvider = ({children}) => {
 			const response = await api.get("/user/profile")
 			setUser(response.data[0])
 		} catch (error) {
-			console.log(error)
+			return error
 		}
 	}
 

@@ -2,7 +2,22 @@ import styles from './Home.module.css'
 import LogoAside from "../components/login/LogoAside";
 import { Link } from 'react-router-dom'
 
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import useAuth from '../hooks/useAuth';
+
 export default function Home() {
+
+	const navigate = useNavigate()
+	const {authenticated} = useAuth()
+
+	useEffect(() => {
+		if(authenticated) {
+			navigate('/dashboard')
+		}
+	}, [authenticated])
+
   return (
     <div className={styles.container}>
       <LogoAside />
