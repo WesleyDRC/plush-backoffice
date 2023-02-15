@@ -1,9 +1,7 @@
 import styles from './BarTop.module.css'
 import User from './User'
 
-import {useState} from 'react'
-
-export default function BarTop({hamburguerMobile, handleMenuDesktop}) {
+export default function BarTop({hamburguerMobile, handleMenuDesktop, name, status}) {
 
 	return (
 		<header className={styles.barTop}>
@@ -24,7 +22,7 @@ export default function BarTop({hamburguerMobile, handleMenuDesktop}) {
 					Tela Inicial
 				</header>
 			</div>
-			<User />
+			<User name={name} status={status}/>
 		</header>
 	)
 }

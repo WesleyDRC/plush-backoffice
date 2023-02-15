@@ -4,10 +4,10 @@ import ItemList from './ItemList'
 
 import './Menu.module.css'
 
-export default function Menu({activedMenu}) {
+export default function Menu({activedMenu, name, status}) {
 	return (
 		<div className={ activedMenu ? styles.menuInitial : styles.menuMobile} id="asideMenu">
-			<User />
+			<User name={name} status={status} />
 			<header> MENU </header>
 			<ul className={styles.list}>
 				<ItemList imageUrl="https://imgur.com/U8T4mCM.png" name="Tela Inicial" />

@@ -5,9 +5,13 @@ import Menu from '../components/dashboard/Menu'
 import HomeScreen from '../components/dashboard/HomeScreen';
 import BarTop from '../components/dashboard/BarTop';
 
+import useUser from '../hooks/useUse';
+
 import { useState, useEffect } from 'react';
 
 export default function Dashboard() {
+
+	const {getInfoUser, user} = useUser()
 
 	const [menu, setMenu] = useState(true)
 	const [dimensions, setDimensions] = useState({
@@ -31,7 +35,11 @@ export default function Dashboard() {
 		return () => {
 			window.removeEventListener('resize', handleResize)
 		}
-	})
+	}, [])
+
+	useEffect(() => {
+		getInfoUser()
+	}, [])
 
 	const handleMenuDesktop = () => {
 		console.log("Clicou no desktop")
@@ -45,9 +53,9 @@ export default function Dashboard() {
 	return (
 		<div className={styles.container}>
 			<LogoTop />
-			<BarTop handleMenuDesktop={handleMenuDesktop} hamburguerMobile={hamburguerMobile} />
-			<Menu activedMenu={menu} />
-			<HomeScreen />
+			<BarTop handleMenuDesktop={handleMenuDesktop} hamburguerMobile={hamburguerMobile} name={user.name} status="Online"/>
+			<Menu activedMenu={menu} name={user.name} status="Online" />
+			<HomeScreen name={user.name}/>
 		</div>
 	)
 }

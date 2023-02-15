@@ -1,5 +1,6 @@
 import styles from './Home.module.css'
 import LogoAside from "../components/login/LogoAside";
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
 				</div>
 				<div className={styles.enter}>
 					<h1> LOUCO POR PELUCIAS </h1>
-					<button className={styles.btn}> INICIAR ANÁLISE </button>
+					<button className={styles.btn}> <Link to="/login"> INICIAR ANÁLISE </Link> </button>
 				</div>
 			</div>
     </div>

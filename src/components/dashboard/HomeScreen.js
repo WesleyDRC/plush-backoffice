@@ -1,12 +1,13 @@
 import Card from './Card'
 import styles from './HomeScreen.module.css'
 
-export default function HomeScreen() {
+export default function HomeScreen({name}) {
+
 	return (
 		<main className={styles.HomeScreen}>
 			<section className={styles.welcome}>
 				<div className={styles.phrase}>
-					<p> Hello, Wesley Luis!</p>
+					<p> Hello, {name}</p>
 					<p> Have an excellent day!</p>
 				</div>
 				<div className={styles.image}>
