@@ -12,51 +12,28 @@ import { useState, useEffect } from 'react';
 
 export default function Dashboard() {
 
-	const {getInfoUser, user} = useUser()
+	const [amountCustomers, setAmountCustomers] = useState([])
+	const {getInfoUser, user, getAllUsers} = useUser()
 	const {authenticated} = useAuth()
-	const [menu, setMenu] = useState(true)
-	const [dimensions, setDimensions] = useState({
-		height: window.innerHeight,
-		width: window.innerWidth
-	})
-
-	useEffect(() => {
-		function handleResize() {
-			setDimensions({
-				height: window.innerHeight,
-        width: window.innerWidth
-			})
-		}
-
-		window.addEventListener('resize', handleResize)
-		if(dimensions.width > 760) {
-			setMenu(true)
-			document.body.style.overflow = "initial"
-		}
-		return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-	}, [])
 
 	useEffect(() => {
 		getInfoUser()
 	}, [authenticated])
 
-	const handleMenuDesktop = () => {
-		console.log("Clicou no desktop")
-	}
+	useEffect(() => {
+		getAllUsers().then((response) => {
+			setAmountCustomers(response.data.length)
+		})
+	}, [])
 
-	const hamburguerMobile = () => {
-		document.body.style.overflow = menu ? "hidden" : "initial"
-		setMenu(!menu)
-	}
+
 
 	return (
 		<div className={styles.container}>
 			<LogoTop />
-			<BarTop handleMenuDesktop={handleMenuDesktop} hamburguerMobile={hamburguerMobile} name={user.name} status="Online"/>
-			<Menu activedMenu={menu} name={user.name} status="Online" />
-			<HomeScreen name={user.name}/>
+			<BarTop screen={"Tela inicial"} name={user.name} status="Online"/>
+			<Menu  name={user.name} status="Online" />
+			<HomeScreen name={user.name} amountCustomers={amountCustomers}/>
 		</div>
 	)
 }

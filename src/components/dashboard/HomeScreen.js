@@ -1,7 +1,7 @@
 import Card from './Card'
 import styles from './HomeScreen.module.css'
 
-export default function HomeScreen({name}) {
+export default function HomeScreen({name, amountCustomers}) {
 
 	return (
 		<main className={styles.HomeScreen}>
@@ -18,7 +18,7 @@ export default function HomeScreen({name}) {
 			<section className={styles.cards}>
 				<Card name="Vendas" imageUrl="https://imgur.com/qITPTRI.png" quantity="257"/>
 				<Card name="Contatos" imageUrl="https://imgur.com/cus86RR.png" quantity="255"/>
-				<Card name="Clientes" imageUrl="https://imgur.com/6t0y1h9.png" quantity="300" />
+				<Card name="Clientes" imageUrl="https://imgur.com/6t0y1h9.png" quantity={amountCustomers} />
 			</section>
 		</main>
 	)

@@ -6,6 +6,10 @@
 	align-items: center;
 	transition: 0.4s;
 }
+.itemList img {
+	width: 24px;
+	height: 20px;
+}
 .itemList span {
 	font-weight: 300;
 	font-size: 2rem;

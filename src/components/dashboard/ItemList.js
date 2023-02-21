@@ -1,10 +1,14 @@
 import styles from './ItemList.module.css'
+import {Link} from 'react-router-dom'
 
-export default function ItemList({imageUrl, name}) {
+export default function ItemList({destiny,imageUrl, alt, name}) {
 	return (
-		<li className={styles.itemList}>
-				<img src={imageUrl} alt="Logo tela inicial" />
-				<span>{name}</span>
-		</li>
+		<Link to={destiny}>
+			<li className={styles.itemList}>
+					<img src={imageUrl} alt={alt} />
+					<span>{name}</span>
+			</li>
+		</Link>
+
 	)
 }

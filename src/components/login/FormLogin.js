@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 export default function FormLogin() {
 
-	const {SignIn } = useAuth()
+	const { SignIn } = useAuth()
 	const navigate = useNavigate()
 
 	const [email, setEmail] = useState("");
@@ -19,7 +19,9 @@ export default function FormLogin() {
       setError("Preencha todos os campos");
       return;
     }
+
     const response = await SignIn(email, password);
+
     if (response) {
       setError(response);
       return;
@@ -46,7 +48,7 @@ export default function FormLogin() {
 							type="text"
 							name="email"
 							value={email}
-							onChange={(e) => [setEmail(e.target.value), setError("")]}
+							onChange={(e) => [setEmail(e.target.value)]}
 						/>
 						<Input
 							forLabel="password"
@@ -54,10 +56,10 @@ export default function FormLogin() {
 							type="password"
 							name="password"
 							value={password}
-							onChange={(e) => [setPassword(e.target.value), setError("")]}
+							onChange={(e) => [setPassword(e.target.value)]}
 						/>
 					</div>
-					<label className={styles.labelError}> {error} </label>
+					<label className={styles.labelError}> {error}  </label>
 					<div className={styles.btn}>
 						<button type="submit" className={styles.btnSend}>ENTRAR</button>
 					</div>

@@ -3,8 +3,7 @@ import ErrorPage from '../pages/ErrorPage'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import Dashboard from '../pages/Dashboard'
-import { AuthProvider } from '../contexts/auth'
-import { UserProvider } from '../contexts/user'
+import Stock from '../pages/Stock'
 
 import useAuth from '../hooks/useAuth'
 
@@ -38,13 +37,14 @@ export default function Routes() {
 			element: <Private> <Dashboard /> </Private>,
 			errorElement: <ErrorPage />
 		},
+		{
+			path: '/dashboard/stock',
+			element: <Private> <Stock /> </Private>,
+			errorElement: <ErrorPage />
+		},
 	])
 
 	return (
-		<AuthProvider>
-			<UserProvider>
-				<RouterProvider router={router}/>
-			</UserProvider>
-		</AuthProvider>
+		<RouterProvider router={router}/>
 	)
 }

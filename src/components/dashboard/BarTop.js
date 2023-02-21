@@ -1,7 +1,11 @@
 import styles from './BarTop.module.css'
 import User from './User'
 
-export default function BarTop({hamburguerMobile, handleMenuDesktop, name, status}) {
+import useMenu from '../../hooks/useMenu'
+
+export default function BarTop({screen, name, status}) {
+
+	const {handleMenuDesktop, hamburguerMobile} = useMenu()
 
 	return (
 		<header className={styles.barTop}>
@@ -19,7 +23,7 @@ export default function BarTop({hamburguerMobile, handleMenuDesktop, name, statu
 				</div>
 
 				<header>
-					Tela Inicial
+					{screen}
 				</header>
 			</div>
 			<User name={name} status={status}/>
