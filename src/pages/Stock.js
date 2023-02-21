@@ -5,12 +5,14 @@ import LogoTop from "../components/dashboard/LogoTop";
 import Menu from "../components/dashboard/Menu";
 import ContentStock from '../components/stock/Content';
 
+import ModalUpdateProduct from '../components/stock/ModalUpdateProduct';
+
 import useUser from '../hooks/useUse';
 import useAuth from '../hooks/useAuth';
 
 import { useEffect, useState} from 'react';
 
-import AxiosRepositoty from '../repository/AxiosRepositoty';
+import AxiosRepository from '../repository/AxiosRepository';
 
 export default function Stock() {
 
@@ -24,32 +26,18 @@ export default function Stock() {
 	}, [authenticated])
 
 	useEffect(() => {
-		AxiosRepositoty.findAllProducts().then((resp) => {
+		AxiosRepository.findAllProducts().then((resp) => {
 			setProducts(resp.data)
 		})
 	}, [])
-
-	const editProduct = (e) => {
-		const tr = e.target.parentNode.parentNode
-
-	}
-
-	const deleteProduct = (e) => {
-		const tr = e.target.parentNode.parentNode
-		const dataProduct = JSON.parse(tr.getAttribute('data_product'))
-		if(window.confirm(`Deseja mesmo excluir o produto ${dataProduct.name}?`) ) {
-			AxiosRepositoty.deleteProduct(dataProduct.id).then(() => {
-				window.location.reload()
-			})
-		}
-	}
 
 	return(
 		<div className={styles.container}>
 			<LogoTop />
 			<BarTop screen={"Estoque"} name={user.name} status="Online"/>
 			<Menu name={user.name} status="Online" />
-			<ContentStock products={products} editProduct={editProduct} deleteProduct={deleteProduct}/>
+			<ContentStock products={products} />
+			<ModalUpdateProduct />
 		</div>
 	)
 }

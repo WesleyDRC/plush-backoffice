@@ -3,6 +3,7 @@ import AppRoutes from "./routes/AppRoutes";
 import { AuthProvider } from "./contexts/auth";
 import { UserProvider } from "./contexts/user";
 import { MenuProvider } from "./contexts/menu";
+import { ProductsProvider } from "./contexts/products";
 
 function App() {
   return (
@@ -10,7 +11,11 @@ function App() {
 			<UserProvider>
         <Container>
         <MenuProvider>
-          <AppRoutes />
+          <ProductsProvider>
+
+            <AppRoutes />
+            
+          </ProductsProvider>
         </MenuProvider>
         </Container>
       </UserProvider>

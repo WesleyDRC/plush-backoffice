@@ -1,6 +1,10 @@
 import styles from "./Product.module.css";
+import useProduct from "../../hooks/useProduct";
 
-export default function Product({ imageUrl, altImage, name, quantity, editProduct, deleteProduct, product}) {
+export default function Product({ imageUrl, altImage, name, quantity, product}) {
+
+  const {editProduct, deleteProduct} = useProduct()
+
   return (
     <tr className={styles.item} data_product={JSON.stringify(product)}>
       <td className={styles.product}>

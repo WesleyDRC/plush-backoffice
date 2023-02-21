@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { api } from "../services/api";
-import AxiosRepositoty from "../repository/AxiosRepositoty";
+import AxiosRepository from "../repository/AxiosRepository";
 
 export const UserContext = createContext({})
 
@@ -10,7 +10,7 @@ export const UserProvider = ({children}) => {
 
 	const getAllUsers = async() => {
 		try {
-			return await AxiosRepositoty.findAllUsers()
+			return await AxiosRepository.findAllUsers()
 		} catch (error) {
 			return error
 		}
