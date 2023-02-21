@@ -21,3 +21,5 @@ Projeto desenvolvido para administrar o ecommerce **Louco por Pelucias**.
 ![preview](./.github/Home.png)
 ## Tela da Dashboard
 ![preview](./.github/Dashboard.png)
+# Tela que trás os produtos que estão no estoque
+![preview](./.github/DashboardEstoque.png)
