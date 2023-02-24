@@ -1,4 +1,4 @@
-import styles from './Content.module.css'
+import styles from './ContentStock.module.css'
 import Product from './Product'
 import useProduct from '../../hooks/useProduct'
 

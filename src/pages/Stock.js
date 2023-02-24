@@ -3,7 +3,7 @@ import styles from './Stock.module.css'
 import BarTop from "../components/dashboard/BarTop";
 import LogoTop from "../components/dashboard/LogoTop";
 import Menu from "../components/dashboard/Menu";
-import ContentStock from '../components/stock/Content';
+import ContentStock from '../components/stock/ContentStock';
 
 import ModalUpdateProduct from '../components/stock/ModalUpdateProduct';
 import ModalCreateProduct from '../components/stock/ModalCreateProduct';

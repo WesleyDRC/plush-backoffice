@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Login from '../pages/Login'
 import Dashboard from '../pages/Dashboard'
 import Stock from '../pages/Stock'
+import Users from '../pages/Users'
 
 import useAuth from '../hooks/useAuth'
 
@@ -23,18 +24,23 @@ export default function Routes() {
 
 	const router = createBrowserRouter([
 		{
-			path: '/',
-			element: <Home />,
-			errorElement: <ErrorPage />
-		},
-		{
 			path: '/login',
 			element: <Login />,
 			errorElement: <ErrorPage />
 		},
 		{
+			path: '/',
+			element: <Home />,
+			errorElement: <ErrorPage />
+		},
+		{
 			path: '/dashboard',
 			element: <Private> <Dashboard /> </Private>,
+			errorElement: <ErrorPage />
+		},
+		{
+			path: '/dashboard/users',
+			element: <Private> <Users /> </Private>,
 			errorElement: <ErrorPage />
 		},
 		{

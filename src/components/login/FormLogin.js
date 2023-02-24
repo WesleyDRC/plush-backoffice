@@ -27,7 +27,7 @@ export default function FormLogin() {
       return;
     }
 
-    navigate("/dashboard");
+    navigate("/");
   }
 
 	return (

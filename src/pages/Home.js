@@ -14,7 +14,7 @@ export default function Home() {
 
 	useEffect(() => {
 		if(authenticated) {
-			navigate('/dashboard')
+			navigate("/");
 		}
 	}, [authenticated])
 
@@ -27,7 +27,7 @@ export default function Home() {
 				</div>
 				<div className={styles.enter}>
 					<h1> LOUCO POR PELUCIAS </h1>
-					<button className={styles.btn}> <Link to="/login"> INICIAR ANÁLISE </Link> </button>
+					<button className={styles.btn}> <Link to="/dashboard"> INICIAR ANÁLISE </Link> </button>
 				</div>
 			</div>
     </div>

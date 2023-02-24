@@ -18,7 +18,8 @@
 }
 .contentStockOpacity .title,
 .contentStock .title {
-	font-size: 2rem;
+	font-size: 1.6rem;
+	font-weight: 300;
 }
 .contentStockOpacity .createProduct button,
 .contentStock .createProduct button {
