@@ -16,9 +16,15 @@ class AxiosRepository {
 		return this.#axiosClient.get("/products")
 	}
 
-	async updateProduct({ id, name, description, color, price, category, inventory, discount}) {
+	async createProduct({ imageUrl, name, description, color, price, category, inventory, discount }) {
+		return this.#axiosClient.post('/products', {
+			imageUrl, name, description, color, price, category, inventory, discount
+		})
+	}
+
+	async updateProduct({ id, imageUrl, name, description, color, price, category, inventory, discount}) {
 		return this.#axiosClient.patch(`/products/${id}`, {
-			name, description, color, price, category, inventory, discount
+			imageUrl, name, description, color, price, category, inventory, discount
 		})
 	}
 

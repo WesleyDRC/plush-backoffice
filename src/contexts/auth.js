@@ -29,7 +29,6 @@ export const AuthProvider = ({children}) => {
 			setUser(response.data.token)
 		} catch (error) {
       if (error.response.status !== error.response.status.ok) {
-				console.log(error.response.data)
         return error.response.data.message;
       }
 		}

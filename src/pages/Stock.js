@@ -6,6 +6,7 @@ import Menu from "../components/dashboard/Menu";
 import ContentStock from '../components/stock/Content';
 
 import ModalUpdateProduct from '../components/stock/ModalUpdateProduct';
+import ModalCreateProduct from '../components/stock/ModalCreateProduct';
 
 import useUser from '../hooks/useUse';
 import useAuth from '../hooks/useAuth';
@@ -38,6 +39,7 @@ export default function Stock() {
 			<Menu name={user.name} status="Online" />
 			<ContentStock products={products} />
 			<ModalUpdateProduct />
+			<ModalCreateProduct />
 		</div>
 	)
 }

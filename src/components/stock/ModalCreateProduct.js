@@ -1,38 +1,30 @@
-import styles from './ModalUpdateProduct.module.css'
+import styles from './ModalCreateProduct.module.css'
 import { useState } from 'react'
 import useProduct from '../../hooks/useProduct'
 
-export default function ModalUpdateProduct() {
+export default function ModalCreateProduct() {
 
+	const [imageProduct, setImageProduct] = useState("");
+  const [nameProduct, setNameProduct] = useState("");
+  const [descriptionProduct, setDescriptionProduct] = useState("");
+  const [colorProduct, setColorProduct] = useState("");
+  const [priceProduct, setPriceProduct] = useState("");
+  const [categoryProduct, setCategoryProduct] = useState("");
+  const [inventoryProduct, setInventoryProduct] = useState("");
+  const [discountProduct, setDiscountProduct] = useState("");
   const [error, setError] = useState("");
 
 	const {
-		modalUpdate,
-		updateProduct,
-		handleModalUpdate,
-		idProduct,
-		imageProduct,
-		nameProduct,
-		descriptionProduct,
-		colorProduct,
-		priceProduct,
-		categoryProduct,
-		inventoryProduct,
-		discountProduct,
-		setNameProduct,
-		setDescriptionProduct,
-		setColorProduct,
-		setPriceProduct,
-		setCategoryProduct,
-		setInventoryProduct,
-		setDiscountProduct
+		createProduct,
+		modalCreate,
+		handleModalCreate
 	} = useProduct()
 
   const submit = async (e) => {
     e.preventDefault();
 
-    const response = await updateProduct({
-			id: idProduct,
+    const response = await createProduct({
+			imageUrl: imageProduct,
 			name: nameProduct,
 			description: descriptionProduct,
 			color: colorProduct,
@@ -43,7 +35,7 @@ export default function ModalUpdateProduct() {
 		})
 
     if (response) {
-      setError(response);
+			setError(response)
       return;
     }
 
@@ -52,14 +44,16 @@ export default function ModalUpdateProduct() {
   }
 
 	return (
-		<div className={modalUpdate ? styles.modalUpdate : styles.modalUpdateFalse}>
-			<div className={styles.productImage}>
-				<div>
-					<img src={imageProduct} alt="Imagem do produto" />
-				</div>
-			</div>
-
+		<div className={modalCreate ? styles.modalCreate : styles.modalCreateFalse}>
 			<form onSubmit={(e) => submit(e)}>
+				<div className={styles.inputBox}>
+					<label htmlFor="image">
+						<input type="text" placeholder="URL da imagem" name="image"
+						value={imageProduct}
+						onChange={(e) => [setImageProduct(e.target.value)]}
+						/>
+					</label>
+				</div>
 				<div className={styles.inputBox}>
 					<label htmlFor="name">
 						<input type="text" placeholder="Nome" name="name"
@@ -116,12 +110,11 @@ export default function ModalUpdateProduct() {
 						/>
 					</label>
 				</div>
-
 				<label className={styles.error}> {error} </label>
 
 				<div className={styles.btn}>
-						<button type="submit" className={styles.btnEdit}>EDITAR</button>
-						<button type="button" className={styles.btnCancel} onClick={handleModalUpdate}>CANCELAR</button>
+						<button type="submit" className={styles.btnEdit}>CRIAR</button>
+						<button type="button" className={styles.btnCancel} onClick={handleModalCreate}>CANCELAR</button>
 					</div>
 			</form>
 		</div>
