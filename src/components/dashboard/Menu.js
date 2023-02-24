@@ -5,15 +5,16 @@ import User from './User'
 import ItemList from './ItemList'
 
 import useMenu from '../../hooks/useMenu'
+import useUser from '../../hooks/useUse'
 
-
-export default function Menu({ name, status}) {
+export default function Menu() {
 
 	const {menu} = useMenu()
+	const {user} = useUser()
 
 	return (
 		<div className={ menu ? styles.menuInitial : styles.menuMobile} id="asideMenu">
-			<User name={name} status={status} />
+			<User name={user.name} status="Online" />
 			<header> MENU </header>
 			<ul className={styles.list}>
 				<ItemList destiny="/dashboard" imageUrl="https://imgur.com/U8T4mCM.png" alt="Tela inicial" name="Tela Inicial" />

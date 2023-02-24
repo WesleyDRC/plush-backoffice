@@ -1,0 +1,15 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 10vh 90vh;
+	grid-gap: 10px;
+	width: 100%;
+	overflow: hidden;
+}
+
+@media (max-width: 760px) {
+	.container {
+		grid-template-rows: 10vh 10vh 80vh;
+		grid-template-columns: 4fr;
+	}
+}

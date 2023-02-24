@@ -1,13 +1,26 @@
 import Card from './Card'
 import styles from './HomeScreen.module.css'
+import useUser from '../../hooks/useUse'
 
-export default function HomeScreen({name, amountCustomers}) {
+import { useEffect, useState } from 'react'
+
+export default function HomeScreen() {
+
+	const [amountCustomers, setAmountCustomers] = useState([])
+
+	const {user, getAllUsers} = useUser()
+
+	useEffect(() => {
+		getAllUsers().then((response) => {
+			setAmountCustomers(response.data.length)
+		})
+	}, [])
 
 	return (
 		<main className={styles.HomeScreen}>
 			<section className={styles.welcome}>
 				<div className={styles.phrase}>
-					<p> Hello, {name}</p>
+					<p> Hello, {user.name}</p>
 					<p> Have an excellent day!</p>
 				</div>
 				<div className={styles.image}>

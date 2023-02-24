@@ -35,8 +35,8 @@ export default function Stock() {
 	return(
 		<div className={styles.container}>
 			<LogoTop />
-			<BarTop screen={"Estoque"} name={user.name} status="Online"/>
-			<Menu name={user.name} status="Online" />
+			<BarTop screen={"Estoque"} />
+			<Menu />
 			<ContentStock products={products} />
 			<ModalUpdateProduct />
 			<ModalCreateProduct />
