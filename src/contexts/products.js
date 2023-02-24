@@ -1,6 +1,6 @@
 import AxiosRepository from "../repository/AxiosRepository";
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const ProductsContext = createContext({})
 
@@ -10,6 +10,7 @@ export const ProductsProvider = ({children}) => {
 
 	// name, description, cor, price, category, inventory, discount
 	const [idProduct, setIdProduct] = useState("")
+	const [imageProduct, setImageProduct] = useState("")
 	const [nameProduct, setNameProduct] = useState("")
 	const [descriptionProduct, setDescriptionProduct] = useState("")
 	const [colorProduct, setColorProduct] = useState("")
@@ -32,6 +33,7 @@ export const ProductsProvider = ({children}) => {
 		const dataProduct = JSON.parse(tr.getAttribute('data_product'))
 
 		setIdProduct(dataProduct.id)
+		setImageProduct(dataProduct.imageUrl)
 		setNameProduct(dataProduct.name)
 		setDescriptionProduct(dataProduct.description)
 		setColorProduct(dataProduct.color)
@@ -71,6 +73,7 @@ export const ProductsProvider = ({children}) => {
 				updateProduct,
 				deleteProduct,
 				idProduct,
+				imageProduct,
 				nameProduct,
 				descriptionProduct,
 				colorProduct,

@@ -7,9 +7,23 @@
 }
 .ContentStock header {
 	padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
 }
 .ContentStock header h2 {
 	font-size: 2rem;
+}
+.ContentStock header button {
+	border: none;
+	padding: 10px;
+	font-size: 1.6rem;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: #0085FF;
+}
+.ContentStock header button:hover {
+	background-color: #0085FF50;
 }
 
 .products {
@@ -46,8 +60,8 @@
 .table .title .action {
 	width: 25%;
 	text-align: center;
-
 }
+
 
 @media (max-width: 760px) {
 	.ContentStock {

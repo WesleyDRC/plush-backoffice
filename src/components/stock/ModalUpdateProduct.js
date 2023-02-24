@@ -2,8 +2,6 @@ import styles from './ModalUpdateProduct.module.css'
 
 import useProduct from '../../hooks/useProduct'
 
-import { useState } from 'react'
-
 export default function ModalUpdateProduct() {
 
 	const {
@@ -11,6 +9,7 @@ export default function ModalUpdateProduct() {
 		updateProduct,
 		handleModalUpdate,
 		idProduct,
+		imageProduct,
 		nameProduct,
 		descriptionProduct,
 		colorProduct,
@@ -55,6 +54,7 @@ export default function ModalUpdateProduct() {
 		<div className={modal ? styles.ModalUpdate : styles.ModalUpdateFalse}>
 			<div className={styles.productImage}>
 				<div>
+					<img src={imageProduct} alt="Imagem do produto" />
 				</div>
 			</div>
 

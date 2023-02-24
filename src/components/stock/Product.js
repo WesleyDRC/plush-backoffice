@@ -10,7 +10,7 @@ export default function Product({ imageUrl, altImage, name, quantity, product}) 
       <td className={styles.product}>
         <div className={styles.imageAndName}>
           <div className={styles.imageProduct}>
-            <img src="https://i.imgur.com/WLXfuLX.png" alt="Imagem" />
+            <img src={imageUrl} alt={altImage} />
           </div>
           <div>
             <p> {name}</p>
