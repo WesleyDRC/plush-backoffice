@@ -1,11 +1,11 @@
 .menuInitial {
-	background-color: #407BFF;
+	background-color: #222d32;
 	grid-column: 1/2;
 }
 
 .menuInitial > header,
 .menuMobile > header {
-	background-color: #1D3771;
+	background-color: #1a2226;
 	font-size: 2rem;
 	font-weight: bold;
 	color: white;

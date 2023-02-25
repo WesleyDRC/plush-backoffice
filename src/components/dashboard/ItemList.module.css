@@ -1,6 +1,5 @@
 .itemList {
 	padding: 10px;
-	background-color: #1D3771;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -27,5 +26,5 @@
 }
 .itemList:hover {
 	cursor: pointer;
-	background-color: #1D377190;
+	background-color: #1a2226;
 }
