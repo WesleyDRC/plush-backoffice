@@ -10,8 +10,9 @@ import ModalCreateProduct from '../components/stock/ModalCreateProduct';
 
 import useUser from '../hooks/useUser';
 import useAuth from '../hooks/useAuth';
+import useMenu from '../hooks/useMenu';
 
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 import AxiosRepository from '../repository/AxiosRepository';
 
@@ -31,6 +32,12 @@ export default function Stock() {
 			setProducts(resp.data)
 		})
 	}, [])
+
+	const {selectedItemDashboard} = useMenu()
+
+	useEffect(() => {
+		selectedItemDashboard("dashboardStock")
+	}, [selectedItemDashboard])
 
 	return(
 		<div className={styles.container}>

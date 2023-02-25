@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
   const [modalCreate, setModalCreate] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
 
-  const { authenticated, SignUp } = useAuth();
+  const { authenticated } = useAuth();
 
   useEffect(() => {
     getInfoUser();

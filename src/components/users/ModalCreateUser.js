@@ -20,6 +20,16 @@ export default function ModalCreateUser() {
   const submit = async (e) => {
     e.preventDefault();
 
+		if(!nameUser) {
+			return setError("Você deve inserir um nome!")
+		}
+		if(!emailUser) {
+			return setError("Você deve inserir um email!")
+		}
+		if(!passwordUser) {
+			return setError("Você deve inserir uma senha!")
+		}
+
     const response = await SignUp({
 			email: emailUser,
 			name: nameUser,
