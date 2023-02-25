@@ -12,6 +12,14 @@ class AxiosRepository {
 		return this.#axiosClient.get("/user")
 	}
 
+	async createUser({email, name, password}) {
+		return this.#axiosClient.post("/auth/signup", {
+			email,
+			name,
+			password
+		})
+	}
+
 	async updateUser(id, name, email) {
 		return this.#axiosClient.patch(`/user/updateUser/${id}`, {
 			name,

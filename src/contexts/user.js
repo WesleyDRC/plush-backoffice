@@ -3,50 +3,72 @@ import { api } from "../services/api";
 import AxiosRepository from "../repository/AxiosRepository";
 import useAuth from "../hooks/useAuth";
 
-export const UserContext = createContext({})
+export const UserContext = createContext({});
 
-export const UserProvider = ({children}) => {
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState([]);
+  const [modalCreate, setModalCreate] = useState(false);
+  const [modalUpdate, setModalUpdate] = useState(false);
 
-	const {authenticated} = useAuth()
+  const { authenticated, SignUp } = useAuth();
 
-	useEffect(() => {
-		getInfoUser()
-	}, [authenticated])
+  useEffect(() => {
+    getInfoUser();
+  }, [authenticated]);
 
-	const [user, setUser] = useState([])
+  const handleModalCreate = () => {
+    setModalCreate(!modalCreate);
+  };
+  const handleModalUpdate = () => {
+    setModalUpdate(!modalUpdate);
+  };
 
-	const getAllUsers = async() => {
-		try {
-			return await AxiosRepository.findAllUsers()
-		} catch (error) {
-			return error
-		}
-	}
+  const addUser = () => {
+    if (!modalCreate) {
+      handleModalCreate();
+    }
+	};
 
-	const getInfoUser = async () => {
-		try {
-			const response = await api.get("/user/profile")
-			setUser(response.data[0])
-		} catch (error) {
-			return error
-		}
-	}
+  const getAllUsers = async () => {
+    try {
+      return await AxiosRepository.findAllUsers();
+    } catch (error) {
+      return error;
+    }
+  };
 
-	const updateUser = async(id, name, email) => {
-		try {
-			await AxiosRepository.updateUser(id, name, email)
-		} catch (error) {
-			console.log(error)
-		}
-	}
+  const getInfoUser = async () => {
+    try {
+      const response = await api.get("/user/profile");
+      setUser(response.data[0]);
+    } catch (error) {
+      return error;
+    }
+  };
 
-	return (
-		<UserContext.Provider
-			value={{
-				getInfoUser, user, getAllUsers, updateUser
-			}}
-		>
-			{children}
-		</UserContext.Provider>
-	)
-}
+  const updateUser = async (id, name, email) => {
+    try {
+      await AxiosRepository.updateUser(id, name, email);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <UserContext.Provider
+      value={{
+        getInfoUser,
+        user,
+        getAllUsers,
+        updateUser,
+        addUser,
+        handleModalCreate,
+        handleModalUpdate,
+				modalCreate,
+				modalUpdate,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+};

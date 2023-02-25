@@ -1,0 +1,72 @@
+.modalCreateFalse {
+	display: none;
+}
+
+.modalCreate {
+	border-radius: 15px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border: 3px solid #407BFF;
+	background-color: white;
+	padding: 20px;
+	max-width: 560px;
+	max-height: 450px;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+}
+
+.inputBox {
+	color: #407BFF;
+	width: 100%;
+}
+.inputBox input{
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #407BFF;
+	font-size: 1.6rem;
+	padding: 10px;
+
+}
+.inputBox input::placeholder{
+	color: #407BFF;
+	font-size: 1.6rem;
+}
+.inputBox input:focus {
+	outline: 0;
+}
+
+.btn {
+	margin-left: auto;
+}
+.btn button{
+	border: none;
+	padding: 10px;
+	font-size: 1.6rem;
+	margin-left: 10px;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+}
+
+.btn .btnEdit {
+	background-color: #0084ff;
+}
+.btn .btnEdit:hover {
+	background-color: #0084ff50;
+}
+.btn .btnCancel {
+	background-color: #FF0000;
+}
+.btn .btnCancel:hover {
+	background-color: #FF000050;
+}

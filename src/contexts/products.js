@@ -42,9 +42,6 @@ export const ProductsProvider = ({ children }) => {
     discount,
   }) => {
     try {
-
-
-
       await AxiosRepository.createProduct({
         imageUrl,
         name,
