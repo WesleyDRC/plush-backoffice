@@ -8,7 +8,7 @@ import ContentStock from '../components/stock/ContentStock';
 import ModalUpdateProduct from '../components/stock/ModalUpdateProduct';
 import ModalCreateProduct from '../components/stock/ModalCreateProduct';
 
-import useUser from '../hooks/useUse';
+import useUser from '../hooks/useUser';
 import useAuth from '../hooks/useAuth';
 
 import { useEffect, useState} from 'react';
@@ -17,7 +17,7 @@ import AxiosRepository from '../repository/AxiosRepository';
 
 export default function Stock() {
 
-	const {getInfoUser, user} = useUser()
+	const {getInfoUser} = useUser()
 	const {authenticated} = useAuth()
 
 	const [products, setProducts] = useState([])

@@ -22,13 +22,13 @@
 	display: none;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 940px) {
 	.menuInitial {
 		display: none;
 	}
 	.menuMobile {
 		display: block;
-		background-color: #407BFF;
+		background-color: #222d32;
 		grid-column: 1/4;
 	}
 	.menuMobile .list {

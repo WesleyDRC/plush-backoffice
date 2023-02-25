@@ -1,6 +1,6 @@
 import Card from './Card'
 import styles from './HomeScreen.module.css'
-import useUser from '../../hooks/useUse'
+import useUser from '../../hooks/useUser'
 
 import { useEffect, useState } from 'react'
 

@@ -7,7 +7,7 @@
 	overflow: hidden;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 940px) {
 	.container {
 		grid-template-rows: 10vh 10vh 80vh;
 		grid-template-columns: 4fr;

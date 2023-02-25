@@ -45,7 +45,7 @@
 	transition-duration: 0.3s;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 940px) {
 	.barTop {
 		grid-column: 1/4;
 	}

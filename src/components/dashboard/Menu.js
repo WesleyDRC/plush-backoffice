@@ -5,7 +5,7 @@ import User from './User'
 import ItemList from './ItemList'
 
 import useMenu from '../../hooks/useMenu'
-import useUser from '../../hooks/useUse'
+import useUser from '../../hooks/useUser'
 
 export default function Menu() {
 

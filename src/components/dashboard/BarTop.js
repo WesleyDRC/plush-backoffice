@@ -2,7 +2,7 @@ import styles from './BarTop.module.css'
 import User from './User'
 
 import useMenu from '../../hooks/useMenu'
-import useUser from '../../hooks/useUse'
+import useUser from '../../hooks/useUser'
 
 export default function BarTop({screen}) {
 

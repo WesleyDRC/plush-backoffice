@@ -12,6 +12,13 @@ class AxiosRepository {
 		return this.#axiosClient.get("/user")
 	}
 
+	async updateUser(id, name, email) {
+		return this.#axiosClient.patch(`/user/updateUser/${id}`, {
+			name,
+			email
+		})
+	}
+
 	async findAllProducts() {
 		return this.#axiosClient.get("/products")
 	}

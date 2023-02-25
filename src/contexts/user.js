@@ -32,10 +32,18 @@ export const UserProvider = ({children}) => {
 		}
 	}
 
+	const updateUser = async(id, name, email) => {
+		try {
+			await AxiosRepository.updateUser(id, name, email)
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
 	return (
 		<UserContext.Provider
 			value={{
-				getInfoUser, user, getAllUsers
+				getInfoUser, user, getAllUsers, updateUser
 			}}
 		>
 			{children}

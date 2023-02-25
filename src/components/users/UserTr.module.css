@@ -1,0 +1,40 @@
+.userTr {
+	background-color: white;
+	height: 90px;
+}
+.userTr td {
+	min-width: 200px;
+}
+.buttons {
+	height: 90px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.buttons button {
+	border: none;
+	padding: 10px;
+	font-size: 1.2rem;
+	color: white;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.buttons .editUser {
+	background-color: #0085FF;
+}
+.buttons .editUser:hover {
+	background-color: #0085FF50;
+}
+.buttons .changePassword {
+	background-color: #ffae00;
+}
+.buttons .changePassword:hover {
+	background-color: #ffae0050;
+}
+.buttons .delete {
+	background-color: #FF0000;
+}
+.buttons .delete:hover {
+	background-color: #FF000050;
+}
